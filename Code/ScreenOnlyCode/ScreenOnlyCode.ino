@@ -8,21 +8,12 @@
 #define TFT_MOSI 23
 #define TFT_SCK  18
 
-#include "DHT.h"
-
-#define DHTPIN 15
-
-#define DHTTYPE DHT11   // DHT 11
-
-DHT dht(DHTPIN, DHTTYPE);
-
 // Create an instance of the display
 Adafruit_GC9A01A tft = Adafruit_GC9A01A(TFT_CS, TFT_DC, TFT_RST);
 
 void setup() {
   // Initialize the display
   Serial.begin(9600);
-  dht.begin();
   tft.begin();
   tft.setRotation(1); // Optional: Rotate the display
   tft.fillScreen(GC9A01A_BLACK); // Clear the screen with black color
@@ -33,19 +24,13 @@ void setup() {
 }
 
 void loop() {
-  float h = dht.readHumidity();
-  float f = dht.readTemperature(true);
-  
-  if (isnan(h) || isnan(f)) {
-    return;
-  }
-  
+  int f = 72;
+  int h = 55;
   tft.fillScreen(GC9A01A_BLACK);
   tft.setCursor(80, 50);
   tft.println((int)f);
   tft.setCursor(55, 140);
   tft.print((int)h);
   tft.println("%");
-  
   delay(2000);
 }
