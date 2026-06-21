@@ -1,0 +1,14 @@
+Added Component: Designator=U?(FP-32M1-A-IPC_C)
+Add component (AddParameter): Name = "Case/Package"; Value = "VQFN"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Core Architecture"; Value = "PIC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Frequency"; Value = "20MHz"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Interface"; Value = "I2C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "125°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Memory Size"; Value = "3.5KB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Memory Type"; Value = "FLASH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-40°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of I/Os"; Value = "24"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Oscillator Type"; Value = "Internal"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Rail/Tube"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Peripherals"; Value = "Brown-out Detect/Reset"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=Main Member=Component U? ATMEGA328P-MUR

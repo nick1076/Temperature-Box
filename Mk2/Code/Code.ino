@@ -6,14 +6,6 @@
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
 
 
-//Libraries
-#include <DHT.h>;
-
-//Constants
-#define DHTPIN 17     // what pin we're connected to
-#define DHTTYPE DHT22   // DHT 22  (AM2302)
-DHT dht(DHTPIN, DHTTYPE); //// Initialize DHT sensor for normal 16mhz Arduino
-
 
 //Variables
 int chk;
@@ -25,7 +17,6 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 void setup() {
   Serial.begin(9600);
-  dht.begin();
 
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3D for 128x64
     Serial.println(F("SSD1306 allocation failed"));
@@ -52,19 +43,12 @@ void setup() {
 void loop()
 {
     //Read data and store it to variables hum and temp
-    hum = dht.readHumidity();
-    temp= dht.readTemperature();
-
-    temp=(temp*1.8)+32.0;
-    int temp2 =(int)temp;
     
     display.clearDisplay();
 
     display.setTextSize(4);
     display.setTextColor(WHITE);
     display.setCursor(40, 18);
-
-    display.println(temp2);
 
     display.setTextSize(2);
     display.setTextColor(WHITE);
